@@ -1,13 +1,12 @@
 import React from "react";
-import Input from "./Input";
+import Toggle from "./Toggle";
 import Select from "./Select";
 
-export default function Footer({ widgetType, apiKey, ids }) {
+export default function Footer({ select, toggle }) {
   return (
-    <div className="list-reset flex flex-wrap items-center justify-between my-2 pt-5">
-      <Input {...apiKey} />
-      <Input {...ids} />
-      <Select {...widgetType} />
+    <div className="list-reset flex flex-wrap items-center justify-between my-2 pt-3">
+      <Toggle {...toggle} />
+      <Select {...select} />
     </div>
   );
 }

@@ -1,12 +1,13 @@
 import React from "react";
 import Select from "./Select";
-import Toggle from "./Toggle";
+import Input from "./Input";
 
-export default function TopBar({ select, toggle }) {
+export default function TopBar({ widgetType, apiKey, ids }) {
   return (
     <div className="list-reset flex flex-wrap items-center justify-between my-2">
-      <Toggle {...toggle} />
-      <Select {...select} />
+      <Input {...apiKey} />
+      <Input {...ids} />
+      <Select {...widgetType} />
     </div>
   );
 }

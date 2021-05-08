@@ -29,35 +29,6 @@ function App() {
       </div>
       <Navbar />
       <TopBar
-        select={{
-          value: selectedName,
-          onChange: (e) => {
-            const theme = require(`react-code-blocks`)[e.target.value];
-            changeTheme(theme);
-            return changeName(e.target.value);
-          },
-          options: Object.keys(themes).map((theme) => (
-            <option key={theme} value={theme}>
-              {theme}
-            </option>
-          )),
-        }}
-        toggle={{
-          checked: lineNumbers,
-          onChange: (e) => toggleLineNumbers(!lineNumbers),
-        }}
-      />
-      <div className="demo">
-        <CopyBlock
-          language={"javascript"}
-          text={codeblocks({ ids, apiKey, widgetType })}
-          showLineNumbers={lineNumbers}
-          theme={selectedTheme}
-          wrapLines={true}
-          codeBlock
-        />
-      </div>
-      <Footer
         widgetType={{
           id: "widgetType",
           label: "Select widget type here",
@@ -87,12 +58,41 @@ function App() {
           onChange: (e) => setIds(e.target.value),
         }}
       />
+      <div className="demo">
+        <CopyBlock
+          language={"javascript"}
+          text={codeblocks({ ids, apiKey, widgetType })}
+          showLineNumbers={lineNumbers}
+          theme={selectedTheme}
+          wrapLines={true}
+          codeBlock
+        />
+      </div>
+      <Footer
+        select={{
+          value: selectedName,
+          onChange: (e) => {
+            const theme = require(`react-code-blocks`)[e.target.value];
+            changeTheme(theme);
+            return changeName(e.target.value);
+          },
+          options: Object.keys(themes).map((theme) => (
+            <option key={theme} value={theme}>
+              {theme}
+            </option>
+          )),
+        }}
+        toggle={{
+          checked: lineNumbers,
+          onChange: (e) => toggleLineNumbers(!lineNumbers),
+        }}
+      />
       <Note
         text={
           <>
             Please enter comma separated id's if you have more than one button
             for each widget type on the webiste.{" "}
-            <span className="ml-3"> For example: button1,button2,button3</span>
+            <span className="ml-1"> For example: button1,button2,button3</span>
           </>
         }
       />
