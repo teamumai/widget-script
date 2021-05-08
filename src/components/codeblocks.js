@@ -3,7 +3,11 @@ export default function widgetCode({
   apiKey = "c942efb0-1f29-4046-895b-8976466c7b66",
   widgetType = "reservation",
 }) {
-  const domId = ids.split(",").map((id) => `"#${id.trim()}"`);
+  const domId =
+    ids
+      ?.split(",")
+      ?.filter((i) => i?.trim?.()?.length)
+      ?.map((id) => `"#${id.trim()}"`) || "";
 
   return `<script src="https://widget.letsumai.com/dist/embed.min.js"></script>
 <script type="text/javascript">
