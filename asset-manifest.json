@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/widget-script/static/css/main.08dd48a3.chunk.css",
+    "main.css": "/widget-script/static/css/main.f3d3d025.chunk.css",
     "main.js": "/widget-script/static/js/main.8d20516b.chunk.js",
     "main.js.map": "/widget-script/static/js/main.8d20516b.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.js": "/widget-script/static/js/react-syntax-highlighter_languages_refractor_abap.830f705c.chunk.js",
@@ -314,14 +314,14 @@
     "static/js/155.332b12e6.chunk.js": "/widget-script/static/js/155.332b12e6.chunk.js",
     "static/js/155.332b12e6.chunk.js.map": "/widget-script/static/js/155.332b12e6.chunk.js.map",
     "index.html": "/widget-script/index.html",
-    "static/css/main.08dd48a3.chunk.css.map": "/widget-script/static/css/main.08dd48a3.chunk.css.map",
+    "static/css/main.f3d3d025.chunk.css.map": "/widget-script/static/css/main.f3d3d025.chunk.css.map",
     "static/js/153.674a7e51.chunk.js.LICENSE.txt": "/widget-script/static/js/153.674a7e51.chunk.js.LICENSE.txt",
     "static/media/logo.e0648905.svg": "/widget-script/static/media/logo.e0648905.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0520b551.js",
     "static/js/153.674a7e51.chunk.js",
-    "static/css/main.08dd48a3.chunk.css",
+    "static/css/main.f3d3d025.chunk.css",
     "static/js/main.8d20516b.chunk.js"
   ]
 }
