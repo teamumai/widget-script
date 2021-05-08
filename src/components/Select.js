@@ -7,7 +7,7 @@ export default function Select(props) {
       {props.label && (
         <label
           className="block text-gray-700 text-sm font-bold mb-2"
-          for={props.id}
+          htmlFor={props.id}
         >
           {props.label}
         </label>
@@ -24,6 +24,11 @@ export default function Select(props) {
           {props.options}
         </select>
       </div>
+      {props.description && (
+        <p className="block text-gray-700 text-sm font-bold mb-2">
+          {props.description}
+        </p>
+      )}
     </div>
   );
 }

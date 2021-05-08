@@ -53,7 +53,7 @@ function App() {
         ids={{
           id: "ids",
           label: "Enter button id's here",
-          placeholder: "Please enter the ids of button here",
+          placeholder: "Please enter the ids of button",
           value: ids,
           onChange: (e) => setIds(e.target.value),
         }}
@@ -70,6 +70,7 @@ function App() {
       </div>
       <Footer
         select={{
+          description: "Select theme as it suits you",
           value: selectedName,
           onChange: (e) => {
             const theme = require(`react-code-blocks`)[e.target.value];
