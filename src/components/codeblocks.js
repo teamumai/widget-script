@@ -11,7 +11,7 @@ export default function widgetCode({
 
   return `<script src="https://widget.letsumai.com/dist/embed.min.js"></script>
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function (event) {
+  function init(event) {
     [${domId}].forEach((id) => {
       var links = document.querySelectorAll(id);
       links.forEach((link) => {
@@ -26,6 +26,8 @@ export default function widgetCode({
         });
       });
     })
-  });
+  }
+  document.addEventListener('DOMContentLoaded', init);
+  window.addEventListener('mercury:load', init);
 </script>`;
 }
