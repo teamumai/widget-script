@@ -25,7 +25,11 @@ export default function widgetCode({
           return false;
         });
       });
-    })
+    });
+    umaiWidget.config({
+      apiKey: "${apiKey}",
+      widgetType: "${widgetType}"
+    });
   }
   document.addEventListener('DOMContentLoaded', init);
   window.addEventListener('mercury:load', init);
