@@ -1,2 +1,0 @@
-(this["webpackJsonpwidget-script"]=this["webpackJsonpwidget-script"]||[]).push([[18],{107:function(t,e,a){"use strict";function i(t){t.languages.brainfuck={pointer:{pattern:/<|>/,alias:"keyword"},increment:{pattern:/\+/,alias:"inserted"},decrement:{pattern:/-/,alias:"deleted"},branching:{pattern:/\[|\]/,alias:"important"},operator:/[.,]/,comment:/\S+/}}t.exports=i,i.displayName="brainfuck",i.aliases=[]}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_brainfuck.97061f0d.chunk.js.map
