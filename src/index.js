@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { dracula, CopyBlock } from "react-code-blocks";
-import {
-  themes,
-  TopBar,
-  Navbar,
-  Footer,
-  Note,
-  codeblocks,
-  widgetTypes,
-} from "./components";
+import { themes, TopBar, Navbar, Footer, Note, codeblocks, widgetTypes } from "./components";
 import { ReactComponent as Logo } from "./assets/logo.svg";
 import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
@@ -68,6 +60,14 @@ function App() {
           codeBlock
         />
       </div>
+      <Note
+        text={
+          <>
+            Please enter comma separated id's if you have more than one button for each widget type
+            on the webiste. <span className="ml-1"> For example: button1,button2,button3</span>
+          </>
+        }
+      />
       <Footer
         select={{
           description: "Select theme as it suits you",
@@ -87,15 +87,6 @@ function App() {
           checked: lineNumbers,
           onChange: (e) => toggleLineNumbers(!lineNumbers),
         }}
-      />
-      <Note
-        text={
-          <>
-            Please enter comma separated id's if you have more than one button
-            for each widget type on the webiste.{" "}
-            <span className="ml-1"> For example: button1,button2,button3</span>
-          </>
-        }
       />
     </div>
   );
