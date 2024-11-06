@@ -29,6 +29,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set github user
+        uses: fregante/setup-git-user@v1
+
       - name: Install
         run: |
           npm install
