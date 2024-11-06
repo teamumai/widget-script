@@ -1,15 +1,11 @@
-export default function widgetCode({
-  ids = "",
-  apiKey = "c942efb0-1f29-4046-895b-8976466c7b66",
-  widgetType = "reservation",
-}) {
+export default function widgetCode({ ids = "", apiKey, widgetType = "reservation" }) {
   const domId =
     ids
       ?.split(",")
       ?.filter((i) => i?.trim?.()?.length)
       ?.map((id) => `"#${id.trim()}"`) || "";
 
-  return `<script src="https://widget.letsumai.com/dist/embed.min.js"></script>
+  return `<script src="https://widget.letsumai.com/dist/embed.min.js" data-api-key="${apiKey}" data-widget-type="${widgetType}"></script>
 <script type="text/javascript">
   function init(event) {
     [${domId}].forEach((id) => {
@@ -25,10 +21,6 @@ export default function widgetCode({
           return false;
         });
       });
-    });
-    umaiWidget.config({
-      apiKey: "${apiKey}",
-      widgetType: "${widgetType}"
     });
   }
   document.addEventListener('DOMContentLoaded', init);
