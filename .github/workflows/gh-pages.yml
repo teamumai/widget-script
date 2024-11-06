@@ -29,8 +29,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set github user
-        uses: fregante/setup-git-user@v1
+      - name: Setup git user
+        uses: fregante/setup-git-user@v2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+          cache: "npm"
 
       # Required to install private npm packages from the umai account
       - name: Set npm authentication token
