@@ -32,6 +32,13 @@ jobs:
       - name: Set github user
         uses: fregante/setup-git-user@v1
 
+      # Required to install private npm packages from the umai account
+      - name: Set npm authentication token
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Install
         run: |
           npm install
