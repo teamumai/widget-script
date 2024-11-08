@@ -52,7 +52,7 @@ function App() {
       />
       <Note
         text={
-          <div className={styles.customButtonTooltip}>
+          <div>
             <h2>Technical details for custom input field</h2>
             <p>
               The <code>buttonIds</code> input should be formatted as a comma-separated list of
