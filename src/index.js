@@ -52,53 +52,64 @@ function App() {
       />
       <Note
         text={
-          <div>
-            <h2>Technical details for custom input field</h2>
-            <p>
-              The <code>buttonIds</code> input should be formatted as a comma-separated list of
-              valid CSS selectors.
+          <div className="bg-gray-100 p-4 rounded-md">
+            <h2 className="text-lg font-bold mb-2">Technical details for custom input field</h2>
+            <p className="mb-4">
+              The <code className="font-mono bg-gray-200 px-1 rounded">buttonIds</code> input should
+              be formatted as a comma-separated list of valid CSS selectors.
             </p>
-            <ul>
+            <ul className="list-disc list-inside mb-4 space-y-2">
               <li>
-                <strong>IDs</strong>: Prefixed with <code>#</code> (e.g., <code>#umai-button</code>)
+                <strong>IDs</strong>: Prefixed with{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">#</code> (e.g.,{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">#umai-button</code>)
               </li>
               <li>
-                <strong>Classes</strong>: Prefixed with <code>.</code> (e.g.,{" "}
-                <code>.button-class</code>)
+                <strong>Classes</strong>: Prefixed with{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">.</code> (e.g.,{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">.button-class</code>)
               </li>
               <li>
                 <strong>Attribute Selectors</strong>: Enclosed in brackets (e.g.,{" "}
-                <code>{`[data-action="open"]`}</code>)
+                <code className="font-mono bg-gray-200 px-1 rounded">{`[data-action="open"]`}</code>
+                )
               </li>
               <li>
-                <strong>Element Types</strong>: Directly use the tag name (e.g., <code>button</code>
-                , <code>a</code>)
+                <strong>Element Types</strong>: Directly use the tag name (e.g.,{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">button</code>,{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">a</code>)
               </li>
               <li>
                 <strong>Complex selectors</strong>: Enter as needed (e.g.,{" "}
-                <code>{`div > .button-class`}</code> or <code>{`input[type="button"]`}</code>)
+                <code className="font-mono bg-gray-200 px-1 rounded">{`div > .button-class`}</code>{" "}
+                or{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">{`input[type="button"]`}</code>
+                )
               </li>
             </ul>
-            <p>
+            <p className="mb-4">
               Ensure that selectors do not contain invalid characters to avoid issues with{" "}
-              <code>querySelectorAll</code>.
+              <code className="font-mono bg-gray-200 px-1 rounded">querySelectorAll</code>.
             </p>
-            <p>
+            <p className="mb-4">
               For more information on how to use CSS selectors, refer to the{" "}
               <a
+                className="text-blue-600 underline"
                 href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                MDN Web Docs for <code>querySelectorAll</code>
+                MDN Web Docs for{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">querySelectorAll</code>
               </a>
               .
             </p>
-            <h3>Examples of valid input:</h3>
-            <ul>
+            <h3 className="text-md font-semibold mb-2">Examples of valid input:</h3>
+            <ul className="list-disc list-inside mb-4 space-y-2">
               <li>
-                <code>#submit-btn</code>, <code>.open-widget</code>,{" "}
-                <code>{`[data-role="trigger"]`}</code>
+                <code className="font-mono bg-gray-200 px-1 rounded">#submit-btn</code>,{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">.open-widget</code>,{" "}
+                <code className="font-mono bg-gray-200 px-1 rounded">{`[data-role="trigger"]`}</code>
               </li>
             </ul>
             <p>

@@ -1,16 +1,11 @@
 export default function widgetCode({ ids = "", apiKey, widgetType = "reservation" }) {
-  const domId =
-    ids
-      .split(",")
-      .filter((i) => i.trim().length)
-      .map((id) => `"${id.trim()}"`) || "";
-
-  return `<!-- 
-  You can copy and paste this script directly into your website. 
+  return `<!--
+  Important Note for Users:
+  Copy and paste this script into your website's HTML.
   Place it in either the <head> or <body> section of your website's HTML document. 
-  Ensure that you only include this script once on your page/website to avoid duplicate executions.
+  Ensure that you only place this script once per page/website to avoid duplicate executions.
 -->
-<script
+<script 
   src="https://widget.letsumai.com/dist/embed.min.js"
   data-api-key="${apiKey}"
   data-widget-type="${widgetType}">
@@ -18,23 +13,20 @@ export default function widgetCode({ ids = "", apiKey, widgetType = "reservation
 <script type="text/javascript">
   function init() {
     /**
-     * Explanation for developers:
-     * - The button IDs should be entered as a comma-separated list with no spaces between them.
-     * - IDs must be valid according to the CSS selector rules used by \`querySelectorAll\`.
-     * 
+     * Explanation for users:
+     * - Enter button selectors (IDs or classes) are comma-separated list without spaces and match button on your page.
+     * - Button selectors must be valid according to the CSS selector rules used by \`querySelectorAll\`.
+     *
      * Valid formats:
-     * - IDs (e.g., \`#button1\`)
-     * - Class names (e.g., \`.btn-2\`)
-     * - Attribute selectors (e.g., \`[id="custom:id"]\`)
-     * 
-     * Example usage:
-     * - \`#button1, .btn-2, [id="custom:id"]\`
-     * 
-     * Ensure that the input follows proper CSS selector syntax as described on MDN's \`querySelectorAll\` documentation:
+     * - IDs: #button1 or #button2
+     * - Classes: .btn1 or .btn-custom
+     * - Attribute selectors: [id="specialButton"]
+     *
+     * For details on valid CSS selector syntax, see:
      * https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
      */
     [${
-      domId
+      ids
         .split(",")
         .filter((i) => i.trim().length)
         .map((id) => `"${id.trim()}"`) || ""
@@ -44,11 +36,12 @@ export default function widgetCode({ ids = "", apiKey, widgetType = "reservation
       links.forEach((link) => {
         // Attach a click event listener to each selected element.
         link.addEventListener("click", function (e) {
-          e.preventDefault(); // Prevent the default action of the click event.
+          e.preventDefault();
           // Configure the \`umaiWidget\` with the provided \`apiKey\` and \`widgetType\`.
           umaiWidget.config({ apiKey: "${apiKey}", widgetType: "${widgetType}" });
-          umaiWidget.openWidget(); // Open the widget modal when an element is clicked.
-          return false; // Return \`false\` to further prevent any default link behavior.
+          // Open the widget modal when an element is clicked.
+          umaiWidget.openWidget();
+          return false;
         }); 
       });
     });
